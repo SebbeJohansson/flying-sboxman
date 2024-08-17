@@ -1,5 +1,6 @@
 using Sandbox.Network;
 using System.Threading.Tasks;
+using SWB.Base;
 
 namespace SWB.Demo;
 
@@ -15,6 +16,9 @@ public class DemoNetworkManager : Component, Component.INetworkListener
 		{
 			GameNetworkSystem.CreateLobby();
 		}
+
+		// Turn off weapon customization
+		WeaponSettings.Instance.Customization = false;
 
 		return base.OnLoad();
 	}
