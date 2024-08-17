@@ -54,7 +54,6 @@ public partial class Weapon : Component, IInventoryItem
 		IsReloading = false;
 		IsScoping = false;
 		IsAiming = false;
-		IsCustomizing = false;
 
 		DestroyUI();
 	}
@@ -131,21 +130,6 @@ public partial class Weapon : Component, IInventoryItem
 
 		if ( !IsProxy )
 		{
-			if ( IsDeploying ) return;
-
-			// Customization
-			if ( WeaponSettings.Instance.Customization && !IsScoping && !IsAiming && Input.Pressed( InputButtonHelper.Menu ) && Attachments.Count > 0 )
-			{
-				if ( !IsCustomizing )
-					OpenCustomizationMenu();
-				else
-					CloseCustomizationMenu();
-
-				IsCustomizing = !IsCustomizing;
-			}
-
-			// Don't cancel reload when customizing
-			if ( IsCustomizing && !IsReloading ) return;
 
 			IsAiming = !Owner.IsRunning && AimAnimData != AngPos.Zero && Input.Down( InputButtonHelper.SecondaryAttack );
 

@@ -7,8 +7,6 @@ public partial class Weapon
 	public ScreenPanel ScreenPanel { get; set; }
 	public PanelComponent RootPanel { get; set; }
 
-	private CustomizationMenu customizationMenu;
-
 	/// <summary>Override this if you want custom UI elements</summary>
 	public virtual void CreateUI()
 	{
@@ -35,16 +33,5 @@ public partial class Weapon
 		{
 			panel.CreateEvent( name, value );
 		}
-	}
-
-	void OpenCustomizationMenu()
-	{
-		customizationMenu = new CustomizationMenu( this );
-		RootPanel.Panel.AddChild( customizationMenu );
-	}
-
-	void CloseCustomizationMenu()
-	{
-		customizationMenu?.Delete( true );
 	}
 }
