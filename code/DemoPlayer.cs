@@ -34,6 +34,13 @@ public class DemoPlayer : PlayerBase
 
 		// Give weapon
 		GiveWeapon( "swb_l96a1", true );
+
+		Weapon weapon = GetWeapon( "swb_l96a1" );
+		weapon.Attachments.ForEach( attachment =>
+		{
+			if ( attachment.Hide ) return;
+			attachment.EquipBroadCast();
+		} );
 	}
 
 	public override void OnDeath( Shared.DamageInfo info )
