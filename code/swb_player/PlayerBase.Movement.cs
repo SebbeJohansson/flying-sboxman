@@ -1,3 +1,4 @@
+using System;
 using Sandbox.Citizen;
 using SWB.Shared;
 
@@ -82,7 +83,7 @@ public partial class PlayerBase
 
 	void Move()
 	{
-		var gravity = Scene.PhysicsWorld.Gravity;
+		var gravity = Vector3.Down * 400f;
 
 		if ( IsOnGround )
 		{

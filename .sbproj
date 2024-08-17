@@ -1,8 +1,8 @@
 {
-  "Title": "Simple Weapon Base",
+  "Title": "Flying S\u0026boxman",
   "Type": "game",
-  "Org": "swb",
-  "Ident": "demo",
+  "Org": "local",
+  "Ident": "flying-sboxman",
   "Schema": 1,
   "IncludeSourceFiles": false,
   "Resources": "*.png\n*.ttf\n*.mp3\n*.wav\n*.config\n*.scss\n*.prefab\n*.fbx\n*.smd\n*credits*\nfonts/*",

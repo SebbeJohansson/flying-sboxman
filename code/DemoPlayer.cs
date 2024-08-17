@@ -33,12 +33,7 @@ public class DemoPlayer : PlayerBase
 		if ( IsBot ) return;
 
 		// Give weapon
-		GiveWeapon( "swb_colt" );
-		GiveWeapon( "swb_revolver" );
-		GiveWeapon( "swb_remington" );
-		GiveWeapon( "swb_veresk" );
-		GiveWeapon( "swb_scarh", true );
-		GiveWeapon( "swb_l96a1" );
+		GiveWeapon( "swb_l96a1", true );
 	}
 
 	public override void OnDeath( Shared.DamageInfo info )
