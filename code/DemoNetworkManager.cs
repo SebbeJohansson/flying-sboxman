@@ -22,6 +22,8 @@ public class DemoNetworkManager : Component, Component.INetworkListener
 		WeaponSettings.Instance.Customization = false;
 		// Turn off inventory display
 		WeaponSettings.Instance.InventoryDisplay = false;
+		// Turn off inventory display
+		WeaponSettings.Instance.Chat = false;
 
 		Chat = Scene.Directory.FindByName( "Screen" )?.First()?.Components.Get<Chat>();
 		if ( Chat == null ) Log.Error( "Chat component not found" );
