@@ -1,0 +1,25 @@
+HealthDisplay {
+    padding: 0;
+    bottom: 35px;
+    left: 35px;
+    flex-direction: column;
+    height: auto;
+    background-color: #73737370;
+    backdrop-filter: blur( 16px );
+    border-radius: 10px;
+
+    .name.name {
+        top: 0;
+        left: 0;
+        position: relative;
+        margin: 10px 0;
+    }
+
+    .health.health {
+        border-top: 2px solid rgb(148, 148, 148);
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+        line-height: 30px;
+    }
+}
