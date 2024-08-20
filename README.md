@@ -13,7 +13,7 @@ The gamemode itself is a love letter to the gamemode [Flying Scoutsman in CS:GO]
 
 ##### Built using:
 - Our Chat system from [DarkRP](https://github.com/sousou63/DarkRP)
-- [SWB](https://github.com/timmybo5/simple-weapon-base)
+- [Simple Weapon Base by the community, for the community](https://github.com/timmybo5/simple-weapon-base)
 - Inspiration was taken from [Sandbox Classic by Softsplit](https://sbox.game/softsplit/sandbox) and [Nicked/HC1 by Facepunch](https://github.com/Facepunch/sbox-hc1)
 
 ##### Features:
