@@ -3,10 +3,15 @@ using SWB.HUD;
 
 public class CustomRootDisplay : RootDisplay
 {
+	// public CustomAmmoDisplay( IPlayerBase player ) : base( player )
+    // {
+    //     StyleSheet.Load( "/UI/CustomAmmoDisplay.scss" );
+    // }
 	Killfeed killfeed;
 	Hitmarker hitmarker;
 	protected override void OnStart()
 	{
+		// base.OnStart();
         Log.Info( "CustomRootDisplay.OnStart" );
 		if ( IsProxy )
 		{
@@ -15,7 +20,7 @@ public class CustomRootDisplay : RootDisplay
 		}
 
 		Panel.StyleSheet.Load( "/swb_hud/RootDisplay.cs.scss" );
-		Panel.AddChild( new CustomHealthDisplay( Player ) );
+		Panel.AddChild( new HealthDisplay( Player ) );
 		Panel.AddChild( new CustomAmmoDisplay( Player ) );
 		Panel.AddChild( new Scoreboard() );
 
@@ -24,5 +29,6 @@ public class CustomRootDisplay : RootDisplay
 
 		hitmarker = new Hitmarker();
 		Panel.AddChild( hitmarker );
+		Panel.StyleSheet.Load( "/UI/Styles/ReplacementStyling.scss" );
 	}
 } 

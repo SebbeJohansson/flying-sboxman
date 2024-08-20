@@ -401,6 +401,7 @@
           "__type": "SWB.Base.WeaponSettings",
           "__guid": "d464e175-fec1-4a51-bf7f-63307177df53",
           "AutoReload": true,
+          "Chat": false,
           "Customization": false,
           "InventoryDisplay": false
         }
