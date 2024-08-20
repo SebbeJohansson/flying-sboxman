@@ -1,0 +1,80 @@
+{
+  "__guid": "5f93c1b2-8279-413d-9945-51df271f21b0",
+  "GameObjects": [
+    {
+      "__guid": "0c372159-e82e-4f05-85c7-5ae09022efa2",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "149.3263,149.3264,-211.1794",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "e5fd3a93-912a-493c-8878-c91d90b72ad5",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Vrtx.UI.MainMenuPanel",
+          "__guid": "8a21cfa2-4b70-4c45-9efb-8633f40abf63"
+        }
+      ]
+    },
+    {
+      "__guid": "268810b4-c608-4b7f-895a-e718f83124e9",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "622.4646,-765.0799,170.738",
+      "Rotation": "0.02631896,-0.04641723,0.492535,0.8686554",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "f48e12b1-d7fc-438c-b2db-77991b423cc2",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "menu",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

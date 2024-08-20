@@ -9,6 +9,7 @@ namespace SWB.Demo;
 public class DemoNetworkManager : Component, Component.INetworkListener
 {
 	[Property] public PrefabScene PlayerPrefab { get; set; }
+		private Chat Chat { get; set; }
 
 	protected override Task OnLoad()
 	{
@@ -19,6 +20,13 @@ public class DemoNetworkManager : Component, Component.INetworkListener
 
 		// Turn off weapon customization
 		WeaponSettings.Instance.Customization = false;
+		// Turn off inventory display
+		WeaponSettings.Instance.InventoryDisplay = false;
+		// Turn off inventory display
+		WeaponSettings.Instance.Chat = false;
+
+		Chat = Scene.Directory.FindByName( "Screen" )?.First()?.Components.Get<Chat>();
+		if ( Chat == null ) Log.Error( "Chat component not found" );
 
 		return base.OnLoad();
 	}

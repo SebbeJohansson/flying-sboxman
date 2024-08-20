@@ -1,5 +1,6 @@
 ﻿using Sandbox.UI;
 using Sandbox.UI.Construct;
+using SWB.Base;
 using SWB.Player;
 using SWB.Shared;
 using System;
@@ -32,6 +33,8 @@ public class Chatbox : Panel
 
 	void Open()
 	{
+		if (WeaponSettings.Instance.Chat == false)
+			return;
 		AddClass( "open" );
 		textEntry.Focus();
 		AsyncScrollToBottom( 1 );

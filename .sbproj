@@ -1,11 +1,11 @@
 {
   "Title": "Flying S\u0026boxman",
   "Type": "game",
-  "Org": "local",
+  "Org": "vrtx",
   "Ident": "flying-sboxman",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": "*.png\n*.ttf\n*.mp3\n*.wav\n*.config\n*.scss\n*.prefab\n*.fbx\n*.smd\n*credits*\nfonts/*",
+  "Resources": "*.png\n*.ttf\n*.mp3\n*.wav\n*.config\n*.scss\n*.prefab\n*.fbx\n*.smd\n*credits*\nfonts/*\nui/**/*.mp4",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
@@ -21,7 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
+    "StartupScene": "scenes/menu.scene",
     "ProjectTemplate": null,
     "LaunchMode": "QuickPlay",
     "MapStartupScene": "scenes/minimal.scene"

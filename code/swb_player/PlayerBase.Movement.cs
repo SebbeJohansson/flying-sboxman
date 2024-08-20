@@ -83,7 +83,7 @@ public partial class PlayerBase
 
 	void Move()
 	{
-		var gravity = Vector3.Down * 400f;
+		var gravity = Vector3.Down * 200f;
 
 		if ( IsOnGround )
 		{

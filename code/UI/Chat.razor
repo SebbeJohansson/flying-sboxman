@@ -1,0 +1,160 @@
+﻿﻿@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using SWB.Shared;
+
+@inherits PanelComponent;
+@implements Component.INetworkListener;
+
+<root>
+	<div class="output">
+		@foreach (var entry in Messages)
+        {
+            var color = new Color(1, 1, 1);
+            // Only show the messages from the last 10 seconds, or all if the input box is focused
+            @if (entry.timeSinceAdded < 10f || ChatOpen)
+            {
+                <div class="chat_entry">
+                    <div class="about">
+                        @if (entry.steamid > 0)
+                        {
+                            <div class="avatar" style="background-image: url( avatar:@entry.steamid )"></div>
+                        }
+                    </div>
+                    @if (entry.steamid > 0)
+                    {
+                        <div class="message">
+                            <div class="author" style="color: rgb(@(255 * color.r), @(255 * color.g), @(255 * color.b));">@entry.author</div>
+                            @entry.message
+                        </div> 
+                    } else {
+                        <div class="message system">
+                            <div class="author">@entry.author</div>
+                            @entry.message
+                        </div>
+                    }
+                </div>
+            }
+        }
+	</div>
+
+    <div class="input-container">
+        <div class="input">
+            <TextEntry style="width:100%;" MaxLength=@(150) @ref="InputBox" onchange="@ChatChanged" onsubmit="@ChatFinished"></TextEntry>
+        </div>
+    </div>
+</root>
+
+@code
+{
+    TextEntry InputBox;
+    bool ChatOpen = false;
+    public record Entry(ulong steamid, string author, string message, RealTimeSince timeSinceAdded)
+    {
+        public bool IsNew { get; set; } = true;
+        public string timestamp { get; } = DateTime.Now.ToString("HH:mm:ss");
+    }
+    public List<Entry> Messages = new List<Entry>();
+
+    protected override void OnUpdate()
+    {
+        if (InputBox is null) {
+            Log.Info("InputBox is null");
+            return;
+        }
+
+		if ( Input.Pressed( InputButtonHelper.Chat ) )
+            ToggleChat(true);
+
+        // Clear the "new" flag after 10 seconds. This is to make sure we don't update chat state every frame
+        foreach (var entry in Messages.Where(e => e.IsNew && e.timeSinceAdded > 10.0f))
+        {
+            entry.IsNew = false;
+            StateHasChanged();
+        }
+    }
+
+    /// <summary>
+    /// Opens and closes the Chat UI state.
+    /// </summary>
+    void ToggleChat(bool open)
+    {
+        ChatOpen = open;
+        if (ChatOpen)
+        {
+            InputBox.Focus();
+        }else {
+            InputBox.Placeholder = "";
+        }
+        SetClass( "open", open );
+        StateHasChanged();
+    }
+
+    void ChatChanged()
+    {
+        var text = InputBox.Text;
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Called when the user has finished typing a message in the chat
+    /// </summary>
+    void ChatFinished()
+    {
+        ToggleChat(false);
+        var text = InputBox.Text;
+        InputBox.Text = "";
+
+        if (string.IsNullOrWhiteSpace(text))
+            return;
+
+        NewUserMessage( text );
+    }
+
+    /// <summary>
+    /// Sends a new message to broadcast to all clients
+    /// </summary>
+    [Broadcast]
+    public void SendMessage( string message, bool system = false)
+    {
+        // Return if the message is empty
+        if (string.IsNullOrWhiteSpace(message))
+            return;
+
+
+        var author = system ? "ℹ️" : Rpc.Caller.DisplayName;
+        var steamid = system ? 0 : Rpc.Caller.SteamId;
+
+        // If there are 30 messages, remove the oldest one
+        if (Messages.Count > 30)
+        {
+            Messages.RemoveAt(0);
+        }
+
+        // Add the message to the chat
+        Messages.Add(new Entry(steamid, author, message, 0.0f));
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Sends a new message from a user to broadcast to all clients
+    /// </summary>
+    public void NewUserMessage( string message)
+    {
+        SendMessage( message, false );
+	}
+
+    /// <summary>
+    /// Sends a new system message to broadcast to all clients
+    /// </summary>
+    public void NewSystemMessage( string message)
+    {
+        SendMessage( message, true );
+    }
+
+    public void ClearChat()
+    {
+        Messages.Clear();
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,44 @@
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: #f8f9fa;
+    margin-left: 200px;
+
+    .main-content {
+        flex-direction: column;
+    }
+    .logo {
+        align-items: center;
+        margin-bottom: 25px;
+        img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .logo-text {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            font-family: Roboto;
+            text-transform: uppercase;
+            align-items: center;
+            .sbox-logo {
+                margin-left: 10px;
+                text-transform: none;
+                font-family: Poppins;
+            }
+        }
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
