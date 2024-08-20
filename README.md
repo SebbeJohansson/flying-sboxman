@@ -1,71 +1,39 @@
-# Simple Weapon Base (S&Box)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/timmybo5/simple-weapon-base)
-![GitHub repo size](https://img.shields.io/github/repo-size/timmybo5/simple-weapon-base)
+<div id="user-content-toc" align="center">
+  <ul>
+    <summary><h1 style="display: inline-block;">is it a bird, is it a plane, no its a s&boxman</h1></summary>
+  </ul>
+  <span><b>Flying S&boxman</b></span><br>
+</div>
 
-A community managed simple to use weapon base for S&amp;Box.
+![image](https://github.com/user-attachments/assets/29affc0b-baff-4573-9f24-fa245637d52f)
 
-[Skeleton version here](https://github.com/timmybo5/swb-skeleton)
 
-## Demonstration
-[![Watch the video](https://img.youtube.com/vi/dfSIqlyvLyM/maxresdefault.jpg)](https://www.youtube.com/watch?v=dfSIqlyvLyM)
+A minimal game built in S&box that focuses on testing the various features inside S&box and testing, using, extending, and developing [SWB](https://github.com/timmybo5/simple-weapon-base).
+The gamemode itself is a love letter to the gamemode [Flying Scoutsman in CS:GO](https://counterstrike.fandom.com/wiki/Flying_Scoutsman) - My favorite gamemode from CS:GO (please bring it to cs2... i miss it)
 
-## Goal
-During the lifetime of garrysmod many weapon bases consisting of poor quality were created, and it would be a shame to see the same in S&box. The goal is to offer an easy to use yet very configurable weapon base maintained by the community for the community.
+##### Built using:
+- Our Chat system from [DarkRP](https://github.com/sousou63/DarkRP)
+- [SWB](https://github.com/timmybo5/simple-weapon-base)
+- Inspiration was taken from [Sandbox Classic by Softsplit](https://sbox.game/softsplit/sandbox) and [Nicked/HC1 by Facepunch](https://github.com/Facepunch/sbox-hc1)
 
-## Features
+##### Features:
+- Flying sausage man
+- Sniper gun thingy
+- Custom main menu - `select map`, `find servers`, and `back to the main menu`
+- Chat system
+- Health
+- Scoreboard
 
-### Various
-* No programming skills needed to use
-* Highly configurable
-* Support for custom animations and actions
+##### Contains examples of:
+- Using SWB and extending the HUD that comes with it
+  - Adding a player, using a subset of the guns, and adding them to a level.
+  - Replacing HUD elements by creating custom classes that inherit from the built-in HUD elements - CustomAmmoDisplay.cs.
+  - Changing styling of HUD elements without creating custom classes - HealthDisplay.cs.
+- Setting up a custom main menu with the built-in tools
+- Using a video as a backdrop for a custom main menu
+- Creating UI elements with .cs files.
+- Creating UI elements with .razor files.
 
-### Offset Editor ([Demo](https://www.youtube.com/watch?v=j5jRZZDgej8))
-The `swb_editor_offsets` command opens a model editor that can be used to easily calculate offsets needed for running, zooming, and more.
-
-### Built-in Animations
-* Walking
-* Crouching
-* Running
-* Jumping
-* Tucking
-* Idle
-* Sway
-* ADS
-
-### Built-in HUD
-* Dynamic Crosshair
-
-### Bullet Types
-* Hitscan (instant)
-* ~Physical (bullet drop & drag)~ TODO
-
-### Supports
-* Magazine Reloading (default)
-* Shell based Reloading
-* Sniper 2D scopes
-* ~Entity (grenades, arrows, props, ...)~ TODO
-* ~Melee~ TODO
-
-### Attachments
-* Customization menu (`q`)
-* Change weapon stats + stacking
-* Easy to add
-
-### Weapon Models
-* Properly licensed weapon models are included in the base
-* They can be used for any purpose as long as the license is respected (credits.txt)
-
-## Contributing
-Anyone can contribute by creating a pull request to their branch. Contributors can help out with the planned updates, outstanding bug/issues, or maybe you just have a cool idea that would improve the base, any help is welcome!
-
-## Planned Updates
-* More base-included entities (e.g. bomb)
-* More attachments
-* Worldmodel clipping shader
-
-## Installing
-If you want to test out the base drag and drop simple-weapon-base-master into your addons folder, open the editor and add as a new project.
-![image](https://github.com/timmybo5/simple-weapon-base/assets/4988198/f9e958f7-680c-4773-aa3a-5c0d3159e13e)
-
-## Usage
-All information can be found in the [Wiki](https://github.com/timmybo5/simple-weapon-base/wiki)
+##### Highlights
+![image](https://github.com/user-attachments/assets/fea0c0ea-c7b1-4cde-83cf-234d5c864147)
+![image](https://github.com/user-attachments/assets/c617d9d2-0dc2-40d7-a3ba-c5b0d5923696)
