@@ -34,6 +34,7 @@ public class DemoPlayer : PlayerBase
 
 		// Give weapon
 		GiveWeapon( "swb_l96a1", true );
+		// GiveWeapon( "knife" ); // Melee weapons doenst work in swb yet.
 
 		Weapon weapon = GetWeapon( "swb_l96a1" );
 		weapon.Attachments.ForEach( attachment =>

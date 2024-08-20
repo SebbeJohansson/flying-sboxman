@@ -394,6 +394,10 @@
             {
               "_type": "gameobject",
               "prefab": "prefabs/weapons/veresk.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapons/knife.prefab"
             }
           ]
         },
