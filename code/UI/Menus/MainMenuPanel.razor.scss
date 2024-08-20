@@ -1,0 +1,14 @@
+
+@import "/UI/Styles/Index.scss";
+MainMenuRoot {
+    // @* background-color: hotpink; *@
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    background-image: url('ui/videos/sausage_boy_walking.mp4');
+    background-size: cover;
+    background-position: center;
+}

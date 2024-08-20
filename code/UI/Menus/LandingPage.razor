@@ -1,0 +1,47 @@
+@using Sandbox;
+@using Sandbox.Modals
+@using Sandbox.UI;
+@using System;
+@using SWB.Shared;
+
+@implements INavigatorPage
+@namespace Vrtx.UI
+
+<root class="landing-page">
+    <div class="main-content">
+        <div class="logo">
+            <img style="background-image: url('ui/images/logo.png');" />
+            <span class="logo-text">Flying <span class="sbox-logo">S&box</span>man</span>
+        </div>
+        <div class="navigation">
+            <a class="button ghost" onclick="@CreateGame"><i>play_circle_outline</i> Create Game</a>
+            <a class="button ghost" onclick="@ShowServerList"><i>dns</i> Server List</a>
+            <a class="button ghost" onclick="@Quit"><i>logout</i> Back to Main Menu</a>
+        </div>
+    </div>
+</root>
+
+@code
+{
+    public LandingPage()
+    {
+        StyleSheet.Load( "/UI/Menus/LandingPage.Razor.scss" );
+    }
+    
+    void CreateGame()
+    {
+        Log.Info( "Create Game" );
+        Game.Overlay.ShowLauncher(Game.Ident);
+    }
+    
+    void ShowServerList()
+    {
+        Log.Info( "Server List" );
+        Game.Overlay.ShowServerList(new ServerListConfig());
+    }
+
+    public void Quit()
+    {
+        Game.Close();
+    }
+}

@@ -401,7 +401,8 @@
           "__type": "SWB.Base.WeaponSettings",
           "__guid": "d464e175-fec1-4a51-bf7f-63307177df53",
           "AutoReload": true,
-          "Customization": true
+          "Customization": false,
+          "InventoryDisplay": false
         }
       ]
     },
@@ -496,6 +497,27 @@
           "Enabled": true,
           "__Prefab": "prefabs/weapons/veresk.prefab",
           "__PrefabVariables": {}
+        }
+      ]
+    },
+    {
+      "__guid": "d34eb7f5-0c88-4f4c-865d-2d798a499fba",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "-269.9525,-301.8099,256.4023",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "65e79358-6558-41fd-9299-f6c192ec8f8a",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Chat",
+          "__guid": "e3add722-0ba8-46ab-bc56-c9a3c42cdde2"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "Title": "Flying S\u0026boxman",
   "Type": "game",
-  "Org": "local",
+  "Org": "vrtx",
   "Ident": "flying-sboxman",
   "Schema": 1,
   "IncludeSourceFiles": false,
@@ -21,7 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
+    "StartupScene": "scenes/menu.scene",
     "ProjectTemplate": null,
     "LaunchMode": "QuickPlay",
     "MapStartupScene": "scenes/minimal.scene"
